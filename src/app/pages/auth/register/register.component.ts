@@ -5,6 +5,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-register',
@@ -53,7 +54,10 @@ export class RegisterComponent {
     return this.registerForm.get('confirmPassword');
   }
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
-  register() {}
+  register() {
+    console.log(this.registerForm.value);
+    this.registerForm.value;
+  }
 }

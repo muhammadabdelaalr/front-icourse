@@ -13,7 +13,7 @@
               <form [formGroup]="registerForm">
                 <mat-form-field appearance="fill" data-aos="fade-down" data-aos-duration="1000">
                   <mat-label>{{'register.username' | translate}}</mat-label>
-                  <input type="text" matInput formControlusername="username" placeholder="Ex. John Doe" />
+                  <input type="text" matInput formControlName="username" placeholder="Ex. John Doe" />
                   <mat-error *ngIf="registerForm.controls.username.errors?.['required']">
                     {{'register.username-is' | translate}} <strong>{{'register.required' | translate}}</strong>
                   </mat-error>
@@ -87,7 +87,7 @@
 
 
                 <div class="button text-center my-3" data-aos="fade-down" data-aos-duration="1000">
-                  <button type="button" class="btn btn-warning w-100 btn-lg" [disabled]="registerForm.invalid" (click)="register()">
+                  <button type="button" class="btn btn-warning w-100 btn-lg"  (click)="register()">
                     {{'register.register-now' | translate}}
                   </button>
 

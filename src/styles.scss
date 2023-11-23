@@ -1,0 +1,159 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --main-color: #fda804;
+  --main-bg: #F6F6F6;
+  --main-transition: all 0.4s ease;
+  --main-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.bg {
+  background: var(--main-bg);
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h4,
+h5 {
+  margin: 0 !important;
+}
+
+p {
+  font-size: 15px;
+}
+
+._500 {
+  font-weight: 500 !important;
+}
+
+._600 {
+  font-weight: 600 !important;
+}
+
+._700 {
+  font-weight: 700 !important;
+}
+
+.color {
+  color: var(--main-color);
+}
+
+.icon {
+  font-size: 16px;
+}
+
+a {
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--main-color);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  // background: var(--main-color);
+  background: var(--main-color);
+}
+
+img::selection {
+  background: none;
+}
+
+::selection {
+  background: var(--main-color);
+}
+
+a {
+  transition: var(--main-transition);
+  text-decoration: none;
+  color: #000;
+}
+
+.active {
+  color: var(--main-color);
+}
+
+.error {
+  color: #f44336;
+}
+
+.btn-warning,
+.btn-outline-warning:hover {
+  color: #fff !important;
+}
+
+.old-price {
+  font-weight: 600 !important;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.new-price {
+  font-weight: 600 !important;
+  color: #f24c0a;
+}
+
+.decoration {
+  text-decoration: line-through !important;
+}
+
+.btn-warning {
+  color: #000 !important;
+}
+
+.content-page {
+  margin: 50px 0 90px;
+}
+
+.nav-breadcrumb {
+  .breadcrumb-item {
+    padding: 0;
+    transition: var(--main-transition);
+
+    :hover {
+      color: var(--main-color);
+    }
+  }
+
+  .breadcrumb-item+.breadcrumb-item::before {
+    float: inline-start;
+    padding: 0 .5rem;
+  }
+}
+
+.bx-x {
+  cursor: pointer;
+}
+
+.mat-mdc-tab-header {
+  direction: ltr !important;
+}

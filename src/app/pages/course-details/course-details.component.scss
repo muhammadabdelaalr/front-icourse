@@ -1,0 +1,24 @@
+section {
+  .banner {
+    padding: 70px 0 35px;
+    background: #273044;
+    color: #fff;
+  }
+
+  .course-mate {
+    display: flex;
+
+    .hr {
+      height: 48px;
+      width: 1px;
+      background: #fff;
+
+    }
+  }
+
+  .tab-left {
+    p {
+      margin: 0;
+    }
+  }
+}

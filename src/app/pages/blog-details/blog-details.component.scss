@@ -1,0 +1,51 @@
+section {
+  article {
+    .post-image {
+      cursor: pointer;
+    }
+    .date {
+      position: relative;
+      h1 {
+        font-size: 66px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset-block-start: -10px;
+        inset-inline-end: 0;
+        width: 1px;
+        height: 100%;
+        background: #eee;
+      }
+    }
+    .content-details {
+      .title {
+        transition: var(--main-transition);
+
+        &:hover {
+          color: var(--main-color);
+        }
+      }
+    }
+    .post-summary {
+      p {
+        line-height: 2rem;
+      }
+    }
+  }
+  .card-title {
+    .title {
+      transition: var(--main-transition);
+
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+  form {
+    // .textarea {
+    //   min-height: 150px;
+    // }
+  }
+}

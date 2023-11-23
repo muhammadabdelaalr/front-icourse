@@ -1,0 +1,46 @@
+section {
+  .title {
+  }
+  .tabs {
+    .tab {
+      position: relative;
+      transition: var(--main-transition);
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 3px;
+        height: 100%;
+        background: var(--main-color);
+        inset-inline-start: 99.5%;
+        border-radius: 10px;
+        display: none;
+        transition: var(--main-transition);
+      }
+
+      &:hover, &.active {
+        background-color: #eee;
+        &::before {
+          display: block;
+        }
+      }
+    }
+  }
+  .boxs {
+    h1 {
+      letter-spacing: 2px;
+    }
+    .box {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-top: 1rem;
+      border-radius: 6px;
+      transition: var(--main-transition);
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--main-shadow) !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<section>
+  <banner [title]="'banner.my-courses' | translate"></banner>
+  <div class="container">
+    <nav class="nav-breadcrumb py-3 fs-6 fw-medium border-bottom border-light-subtle" aria-label="breadcrumb">
+      <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item"><a routerLink="/">{{'breadcrumb.home' | translate}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{'breadcrumb.my-courses' | translate}}</li>
+      </ol>
+    </nav>
+    <div class="content-page">
+      <div class="row">
+        <div class="col-12">
+          <div class="cards" data-aos="fade-down" data-aos-duration="1000">
+            <div class="row">
+              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" routerLink="/course-details" *ngFor="let item of courses" data-aos="fade-down"
+                data-aos-duration="1000">
+                <card [img]="item.img" [logo]="item.logo" [name]="item.name" [title]="item.title" [price]="item.price"
+                  [newPrice]="item.newPrice" [sub]="item.sub"></card>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

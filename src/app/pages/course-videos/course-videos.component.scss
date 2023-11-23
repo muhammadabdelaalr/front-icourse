@@ -1,0 +1,24 @@
+section {
+  .body-video {
+    // min-height: 550px;
+    max-height: 550px;
+  }
+  .tabs {
+
+    .details {
+      max-height: 490px;
+      overflow-y: auto;
+      .tab {
+        transition: var(--main-transition);
+
+        &:hover {
+          background-color: #eee;
+
+          h4 {
+            color: var(--main-color);
+          }
+        }
+      }
+    }
+  }
+}

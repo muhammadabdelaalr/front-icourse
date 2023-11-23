@@ -1,0 +1,93 @@
+<section>
+  <banner [title]="'banner.contact' | translate"></banner>
+  <div class="container">
+    <div class="content-page">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
+          <div class="box p-5 my-2 shadow rounded">
+            <i class="bx bx-map"></i>
+            <div class="title mt-2">
+              <h1 class="fw-bold py-2 color">
+                {{ "contact.address" | translate }}
+              </h1>
+              <h3 class="fw-medium">
+                حي بني حارثة شارع محمد بن عبد العزيز المدينة المنورة
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
+          <div class="box p-5 my-2 shadow rounded">
+            <i class="bx bx-envelope"></i>
+            <div class="title mt-2">
+              <h1 class="fw-bold py-2 color">
+                {{ "contact.email" | translate }}
+              </h1>
+              <a href="mailto:email@mail.com" target="_blank">
+                <h3 class="fw-medium">text@mail.com</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
+          <div class="box p-5 my-2 shadow rounded">
+            <i class="bx bx-mobile-alt"></i>
+            <div class="title mt-2">
+              <h1 class="fw-bold py-2 color">
+                {{ "contact.call" | translate }}
+              </h1>
+              <a href="tel:+201095245526" target="_blank">
+                <h3 class="fw-medium">+201095245526</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" data-aos="fade-down" data-aos-duration="1000">
+          <div class="mapouter my-5" style="min-height: 500px">
+            <div class="gmap_canvas">
+              <iframe
+                width="100%"
+                height="100%"
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?q=egypt&t=&z=6&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe>
+              <a href="https://2yu.co">2yu</a>
+              <br />
+              <style>
+                .mapouter {
+                  position: relative;
+                  text-align: right;
+                  height: 100%;
+                  width: 100%;
+                }
+              </style>
+              <a href="https://embedgooglemap.2yu.co/">html embed google map</a>
+              <style>
+                .gmap_canvas {
+                  overflow: hidden;
+                  background: none !important;
+                  height: 100%;
+                  width: 100%;
+                  border-radius: 0.5rem;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+section {
+  .content-page {
+    .account {
+      a {
+        color: var(--main-color);
+        text-decoration: underline;
+      }
+    }
+    .coupons {
+      form {
+        transition: var(--main-transition);
+      }
+    }
+    .btn-checkout {
+      .example-radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+        align-items: flex-start;
+      }
+
+      .example-radio-button {
+        margin: 5px;
+      }
+    }
+  }
+}

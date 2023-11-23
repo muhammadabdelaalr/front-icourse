@@ -1,0 +1,15 @@
+section {
+  mat-card {
+    margin: 3rem auto;
+    background: #fff;
+
+    mat-form-field {
+      width: 100%;
+    }
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

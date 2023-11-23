@@ -1,0 +1,73 @@
+<section>
+  <banner [title]="'instructor'"></banner>
+  <div class="container">
+    <nav class="nav-breadcrumb py-3 fs-6 fw-medium border-bottom border-light-subtle" aria-label="breadcrumb">
+      <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item"><a routerLink="/">{{'breadcrumb.home' | translate}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">instructor</li>
+      </ol>
+    </nav>
+    <div class="content-page">
+      <div class="card">
+        <div class="content-card p-4">
+          <div class="row">
+            <div class="col-md-3 col-sm-12">
+              <img src="../../../assets/images/logo.jpg" class="border w-100 h-100" alt="logo" loading="lazy">
+            </div>
+            <div class="col-md-9 col-sm-12 py-4">
+              <h1 class="title fs-2 fw-bold">Alkhabir</h1>
+              <div class="icons py-3">
+                <div class="d-flex align-items-center gap-2">
+                  <i class='bx bxs-book-bookmark icon text-muted'></i>
+                  <h3 class="text-muted">2 الدورات</h3>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <i class='bx bx-group icon text-muted'></i>
+                  <h3 class="text-muted"> 0 الطلاب</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cards mt-5">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let item of courses" data-aos="fade-down" data-aos-duration="1000" routerLink="/course-details">
+            <div class="card my-2 border-1 rounded-0 overflow-hidden">
+              <div class="card-img-top overflow-hidden">
+                <img [src]="item.img" loading="lazy" class="w-100 h-100" alt="image">
+              </div>
+              <div class="foot-card">
+                <div class="sub d-flex justify-content-around align-items-center gap-3">
+                  <div class="price d-flex gap-2">
+                    <h4 *ngIf="item.price" class="fs-6 old-price">{{item.price}}$</h4>
+                    <h4 *ngIf="item.newPrice" class="fs-6 new-price">{{item.newPrice}}$</h4>
+                  </div>
+                  <h4 class="fs-6 text-muted">{{item.category}}</h4>
+                </div>
+              </div>
+              <div class="card-body p-4 text-center">
+                <div class="d-flex justify-content-between align-items-center overflow-hidden">
+                  <div class="titles w-100">
+                    <h1 class="card-title title my-1">{{item.title}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="hr"></div>
+              <div class="foot-card d-flex justify-content-around align-items-center">
+                  <div class="sub d-flex justify-content-between align-items-center gap-2">
+                  <i class='bx bx-file-blank fs-6 text-muted'></i>
+                  <h4 class="fs-6 text-muted">{{item.lessons}} Lessons</h4>
+                </div>
+                <div class="sub d-flex justify-content-between align-items-center gap-2">
+                  <i class='bx bxs-group fs-6 text-muted'></i>
+                  <h4 class="fs-6 text-muted">{{item.student}} student</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

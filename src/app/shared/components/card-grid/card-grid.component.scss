@@ -1,0 +1,60 @@
+.list-card {
+  .course-item {
+    overflow: hidden;
+    display: grid !important;
+    grid-template-columns: 270px 1fr;
+    grid-gap: 25px;
+    align-items: center;
+    padding: 35px 0;
+
+    .img {
+      position: relative;
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+        .btn {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      img {
+        transition: var(--main-transition);
+      }
+      .btn {
+        position: absolute;
+        inset-inline-start: 34%;
+        inset-block-start: 40%;
+        transform: scale(1.1);
+        opacity: 0;
+        transition: var(--main-transition);
+      }
+    }
+
+    .content-list {
+      a > h1, h3 {
+        transition: var(--main-transition);
+        &:hover {
+          color: var(--main-color) !important;
+        }
+      }
+    }
+
+    .course-description {
+      margin: 15px 0 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      font-size: 16px;
+      font-weight: 500;
+      color: #999;
+    }
+    .course-author {
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+}

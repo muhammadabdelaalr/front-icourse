@@ -1,0 +1,72 @@
+<section>
+  <banner [title]="'banner.login' | translate"></banner>
+  <div class="content-page">
+    <div class="container">
+      <div class="row">
+        <div class="form-container col-lg-6 col-md-12 mx-auto">
+          <mat-card>
+            <mat-card-content>
+              <div class="title text-center text-capitalize my-3" data-aos="fade-down" data-aos-duration="800">
+                <h1 class="fw-bold">{{ "forgot-pass.forgot-pass" | translate }}</h1>
+              </div>
+
+              <form [formGroup]="forgotForm">
+
+                <mat-form-field appearance="fill" class="w-100 my-2" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-label>{{'login.email' | translate}}</mat-label>
+                  <input type="email" matInput formControlName="email" placeholder="Ex. example@mail.com">
+                  <mat-error *ngIf="forgotForm.controls.email.errors?.['required']">
+                    {{'login.email-is' | translate}} <strong>{{'login.required' | translate}}</strong>
+                  </mat-error>
+                  <mat-error *ngIf="forgotForm.controls.email.errors?.['email']">
+                    {{'login.emailAddress' | translate}}
+                  </mat-error>
+                </mat-form-field>
+
+                <form [formGroup]="otpForm">
+
+                  <mat-form-field appearance="fill" class="w-100 my-2" *ngIf="otp">
+                    <mat-label>{{'verification.otp' | translate}}</mat-label>
+                    <input type="text" matInput formControlName="otp" [placeholder]="'verification.otp' | translate">
+                    <mat-error *ngIf="otpForm.controls.otp.errors?.['required']">
+                      {{'verification.otp-required' | translate}}
+                    </mat-error>
+                    <mat-error *ngIf="otpForm.controls.otp.errors?.['pattern']">
+                      {{'verification.pattern' | translate}}
+                    </mat-error>
+                  </mat-form-field>
+
+                  <div class="button text-center my-3" data-aos="fade-down" data-aos-duration="1000">
+
+                    <div class="button text-end mb-2" *ngIf="otp" data-aos="fade-down" data-aos-duration="1000">
+                      <button class="btn btn-warning" (click)="resendCode()">
+                        {{'verification.resend' | translate}}
+
+                      </button>
+                    </div>
+                    <button *ngIf="!otp" class="btn btn-warning rounded-pill w-100 btn-lg" [disabled]="forgotForm.invalid"
+                      (click)="sentCode()">{{'forgot-pass.send' | translate}}</button>
+                    <button *ngIf="otp" class="btn btn-warning rounded-pill w-100 btn-lg" [disabled]="otpForm.invalid"
+                      (click)="sentVerify()">{{'forgot-pass.reset-password' | translate}}</button>
+                  </div>
+
+                </form>
+
+              </form>
+
+              <div class="login-signup my-4 text-center" data-aos="fade-down" data-aos-duration="1500">
+                <span class="text">{{'forgot-pass.i-a-member' | translate}}
+                  <a class="title" routerLink="/login">
+                    {{'forgot-pass.sign-in-now' | translate}}
+                  </a>
+                </span>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

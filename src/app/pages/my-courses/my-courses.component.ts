@@ -1,0 +1,101 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-my-courses',
+  templateUrl: './my-courses.component.html',
+  styleUrls: ['./my-courses.component.scss']
+})
+export class MyCoursesComponent {
+
+  courses = [
+    {
+      id: 1,
+      img: '../../../../assets/images/card.jpg',
+      logo: '../../../../assets/images/cardLogo.jpeg',
+      name: 'Alkhabir1',
+      title: 'دورة الريفيت الانشائي',
+      desc: 'تُعَتِّبر دورة الريفيت الانشائي من الدورات التدريبية الرائدة في مجال الهندسة المعمارية والإنشائية. تعتمد هذه الدورة على استخدام برنامج الريفيت الذي يعتبر أحد أقوى...',
+      price: 100,
+      newPrice: 100,
+      sub: 2500,
+    },
+    {
+      id: 2,
+      img: '../../../../assets/images/card1.jpg',
+      logo: '../../../../assets/images/cardLogo.jpeg',
+      name: 'Alkhabir',
+      title: 'دورة الريفيت الانشائي',
+      desc: 'تُعَتِّبر دورة الريفيت الانشائي من الدورات التدريبية الرائدة في مجال الهندسة المعمارية والإنشائية. تعتمد هذه الدورة على استخدام برنامج الريفيت الذي يعتبر أحد أقوى...',
+      price: 200,
+      newPrice: 100,
+      sub: 2500,
+    },
+    {
+      id: 3,
+      img: '../../../../assets/images/card.jpg',
+      logo: '../../../../assets/images/cardLogo.jpeg',
+      name: 'Alkhabir',
+      title: 'دورة الريفيت الانشائي',
+      desc: 'تُعَتِّبر دورة الريفيت الانشائي من الدورات التدريبية الرائدة في مجال الهندسة المعمارية والإنشائية. تعتمد هذه الدورة على استخدام برنامج الريفيت الذي يعتبر أحد أقوى...',
+      price: 300,
+      newPrice: 100,
+      sub: 2500,
+    },
+    {
+      id: 4,
+      img: '../../../../assets/images/card1.jpg',
+      logo: '../../../../assets/images/cardLogo.jpeg',
+      name: 'Alkhabir',
+      title: 'دورة الريفيت الانشائي',
+      desc: 'تُعَتِّبر دورة الريفيت الانشائي من الدورات التدريبية الرائدة في مجال الهندسة المعمارية والإنشائية. تعتمد هذه الدورة على استخدام برنامج الريفيت الذي يعتبر أحد أقوى...',
+      price: 200,
+      newPrice: 100,
+      sub: 2500,
+    },
+    {
+      id: 5,
+      img: '../../../../assets/images/card.jpg',
+      logo: '../../../../assets/images/cardLogo.jpeg',
+      name: 'Alkhabir',
+      title: 'دورة الريفيت الانشائي',
+      desc: 'تُعَتِّبر دورة الريفيت الانشائي من الدورات التدريبية الرائدة في مجال الهندسة المعمارية والإنشائية. تعتمد هذه الدورة على استخدام برنامج الريفيت الذي يعتبر أحد أقوى...',
+      price: 200,
+      newPrice: 100,
+      sub: 2500,
+    },
+    {
+      id: 6,
+      img: '../../../../assets/images/card1.jpg',
+      logo: '../../../../assets/images/cardLogo.jpeg',
+      name: 'Alkhabir',
+      title: 'دورة الريفيت الانشائي',
+      desc: 'تُعَتِّبر دورة الريفيت الانشائي من الدورات التدريبية الرائدة في مجال الهندسة المعمارية والإنشائية. تعتمد هذه الدورة على استخدام برنامج الريفيت الذي يعتبر أحد أقوى...',
+      price: 200,
+      newPrice: 100,
+      sub: 2500,
+    },
+    {
+      id: 7,
+      img: '../../../../assets/images/card.jpg',
+      logo: '../../../../assets/images/cardLogo.jpeg',
+      name: 'Alkhabir',
+      title: 'دورة الريفيت الانشائي',
+      desc: 'تُعَتِّبر دورة الريفيت الانشائي من الدورات التدريبية الرائدة في مجال الهندسة المعمارية والإنشائية. تعتمد هذه الدورة على استخدام برنامج الريفيت الذي يعتبر أحد أقوى...',
+      price: 200,
+      newPrice: 100,
+      sub: 2500,
+    },
+    {
+      id: 8,
+      img: '../../../../assets/images/card1.jpg',
+      logo: '../../../../assets/images/cardLogo.jpeg',
+      name: 'Alkhabir',
+      title: 'دورة الريفيت الانشائي',
+      desc: 'تُعَتِّبر دورة الريفيت الانشائي من الدورات التدريبية الرائدة في مجال الهندسة المعمارية والإنشائية. تعتمد هذه الدورة على استخدام برنامج الريفيت الذي يعتبر أحد أقوى...',
+      price: 200,
+      newPrice: 100,
+      sub: 2500,
+    },
+  ];
+
+}

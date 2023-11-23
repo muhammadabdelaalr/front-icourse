@@ -1,0 +1,31 @@
+section {
+  .content-page {
+    .box {
+      transition: var(--main-transition);
+      text-align: center;
+      i {
+        font-size: 3rem;
+        padding: 1rem;
+        background: var(--main-color);
+        border-radius: 50%;
+        transition: var(--main-transition);
+        &:hover {
+        }
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+        i {
+
+          color: #fff;
+        }
+      }
+      a {
+        transition: var(--main-transition);
+        &:hover {
+          color: var(--main-color);
+        }
+      }
+    }
+  }
+}

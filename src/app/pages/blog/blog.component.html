@@ -1,0 +1,89 @@
+<section>
+  <banner [title]="'banner.blog' | translate"></banner>
+  <div class="container">
+    <nav class="nav-breadcrumb py-3 fs-6 fw-medium border-bottom border-light-subtle" aria-label="breadcrumb">
+      <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item"><a routerLink="/">{{'breadcrumb.home' | translate}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{'breadcrumb.blog' | translate}}</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="content-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-12" data-aos="fade-down" data-aos-duration="1000">
+          <article class="my-4">
+            <div class="post-image mb-4" routerLink="/blog-details">
+              <img src="../../../assets/images/blog.webp" loading="lazy" alt="blog" class="w-100 h-100">
+            </div>
+            <div class="post-content">
+              <div class="post-header">
+                <div class="d-flex">
+                  <div class="date px-2 text-center">
+                    <h1 class="color fw-bold">19</h1>
+                    <h3 class="fw-bold py-2">سبتمبر</h3>
+                  </div>
+                  <div class="content-details px-3">
+                    <a routerLink="/blog-details" class="title fs-2 fw-bold">ماذا تعرف عن AutoCAD؟</a>
+                    <div class="d-flex gap-5 mt-3">
+                      <div>
+                        <h3 class="text-muted fw-medium">Posted by</h3>
+                        <a routerLink="/instructor" class="title fw-medium">ALKHABIR</a>
+                      </div>
+                      <div>
+                        <h3 class="text-muted fw-medium">Comments</h3>
+                        <a routerLink="/blog-details" class="title fw-medium">0 COMMENT</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-summary py-3">
+                <p>يعد AutoCAD أداة قوية ومتعددة الاستخدامات يمكن استخدامها في مجموعة واسعة من الصناعات والمجالات، إنها أداة أساسية للعديد من المحترفين، وهي مهارة قيمة يجب امتلاكها.</p>
+              </div>
+              <div class="post-btn text-start">
+                <button class="btn btn-warning" routerLink="/blog-details">إقرا المزيد</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-12" data-aos="fade-down" data-aos-duration="1000">
+          <article class="my-4">
+            <div class="post-image mb-4" routerLink="/blog-details">
+              <img src="../../../assets/images/blog.jpg" loading="lazy" alt="blog" class="w-100 h-100">
+            </div>
+            <div class="post-content">
+              <div class="post-header">
+                <div class="d-flex">
+                  <div class="date px-2 text-center">
+                    <h1 class="color fw-bold">19</h1>
+                    <h3 class="fw-bold py-2">سبتمبر</h3>
+                  </div>
+                  <div class="content-details px-3">
+                    <a routerLink="/blog-details" class="title fs-2 fw-bold">ماذا تعرف عن AutoCAD؟</a>
+                    <div class="d-flex gap-5 mt-3">
+                      <div>
+                        <h3 class="text-muted fw-medium">Posted by</h3>
+                        <a routerLink="/instructor" class="title fw-medium">ALKHABIR</a>
+                      </div>
+                      <div>
+                        <h3 class="text-muted fw-medium">Comments</h3>
+                        <a routerLink="/blog-details" class="title fw-medium">0 COMMENT</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-summary py-3">
+                <p>يعد AutoCAD أداة قوية ومتعددة الاستخدامات يمكن استخدامها في مجموعة واسعة من الصناعات والمجالات، إنها أداة أساسية للعديد من المحترفين، وهي مهارة قيمة يجب امتلاكها.</p>
+              </div>
+              <div class="post-btn text-start">
+                <button class="btn btn-warning" routerLink="/blog-details">إقرا المزيد</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

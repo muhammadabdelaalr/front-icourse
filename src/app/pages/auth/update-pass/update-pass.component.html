@@ -1,0 +1,67 @@
+<section>
+  <banner [title]="'banner.login' | translate"></banner>
+  <div class="content-page">
+    <div class="container">
+      <div class="row">
+        <div class="form-container col-lg-6 col-md-12 mx-auto">
+          <mat-card>
+            <mat-card-content>
+              <div class="title text-center text-capitalize my-3" data-aos="fade-down" data-aos-duration="800">
+                <h1 class="fw-bold">Update Password</h1>
+              </div>
+
+              <form [formGroup]="changePassForm" (ngSubmit)="updatePass()">
+
+                <mat-form-field appearance="fill" class="w-100" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-label>{{'change-pass.new-password' | translate}}</mat-label>
+                  <input [type]="hide ? 'password' : 'text'" id="newPassword" formControlName="newPassword" matInput
+                    placeholder="**********">
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  <mat-error *ngIf="changePassForm.controls.newPassword.errors?.['required']">
+                    {{'change-pass.password-new-is' | translate}} <strong>{{'change-pass.required' |
+                      translate}}</strong>
+                  </mat-error>
+                  <mat-error *ngIf="changePassForm.controls.newPassword.errors?.['pattern']">
+                    {{'change-pass.passwords-must' | translate}}
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="w-100 mb-2" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-label>{{'change-pass.confirm-password' | translate}}</mat-label>
+                  <input [type]="hide ? 'password' : 'text'" id="confirmPassword" formControlName="confirmPassword"
+                    matInput placeholder="**********" />
+                  <mat-icon matSuffix (click)="hide = !hide">{{
+                    hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                  <mat-error *ngIf="changePassForm.controls.confirmPassword.errors?.['required']">
+                    {{'change-pass.confirm-password-is' | translate}} <strong>{{'change-pass.required' |
+                      translate}}</strong>
+                  </mat-error>
+                  <mat-error *ngIf="confirmPassword?.value !== password?.value">
+                    {{'change-pass.confirm-the' | translate}}
+                  </mat-error>
+                </mat-form-field>
+
+                <div class="button text-center my-3" data-aos="fade-down" data-aos-duration="1000">
+                  <button type="submit" class="btn btn-warning rounded w-100 btn-lg"
+                    [disabled]="changePassForm.invalid">{{'change-pass.change-pass' | translate}}</button>
+                </div>
+
+              </form>
+
+              <div class="login-signup my-4 text-center" data-aos="fade-down" data-aos-duration="1500">
+                <span class="text">I`m a member
+                  <a class="title" routerLink="/login">
+                    Sign in now
+                  </a>
+                </span>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

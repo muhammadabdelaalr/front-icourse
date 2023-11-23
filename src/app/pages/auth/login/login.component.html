@@ -1,0 +1,68 @@
+<section>
+  <banner [title]="'banner.login' | translate"></banner>
+  <div class="content-page">
+    <div class="container">
+      <div class="row">
+        <div class="form-container col-lg-6 col-md-12 mx-auto">
+          <mat-card>
+            <mat-card-content>
+              <div
+                class="title text-center text-capitalize my-3"
+                data-aos="fade-down" data-aos-duration="1000">
+                <h1 class="fw-bold">{{'login.login' | translate}}</h1>
+              </div>
+
+              <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+                <mat-form-field appearance="fill" class="my-2" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-label>{{'login.email' | translate}}</mat-label>
+                  <input type="email" matInput formControlName="email" placeholder="Ex. example@mail.com">
+                  <mat-error *ngIf="loginForm.controls.email.errors?.['required']">
+                    {{'login.email-is' | translate}} <strong>{{'login.required' | translate}}</strong>
+                  </mat-error>
+                  <mat-error *ngIf="loginForm.controls.email.errors?.['email']">
+                    {{'login.emailAddress' | translate}}
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="my-2" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-label>{{'login.password' | translate}}</mat-label>
+                  <input [type]="hide ? 'password' : 'text'" formControlName="password" matInput placeholder="**********">
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  <mat-error *ngIf="loginForm.controls.password.errors?.['required']">
+                    {{'login.password-is' | translate}} <strong>{{'login.required' | translate}}</strong>
+                  </mat-error>
+                  <mat-error *ngIf="loginForm.controls.password.errors?.['minlength']">
+                    {{'login.passMin' | translate}}
+                  </mat-error>
+                </mat-form-field>
+
+                <div class="forgot-remember d-flex justify-content-between align-items-center" data-aos="fade-down" data-aos-duration="1000">
+                  <a class="title" routerLink="/forgot-password"> {{'login.forgot-your-password' | translate}}</a>
+                  <div class="title">
+                    <mat-checkbox [checked]="remember" color="warn">{{'login.remember' | translate}}</mat-checkbox>
+
+                  </div>
+                </div>
+
+                <div class="button text-center my-3" data-aos="fade-down" data-aos-duration="1000">
+                  <button type="submit" class="btn btn-warning rounded w-100 btn-lg" [disabled]="loginForm.invalid">{{'login.sign-in-now' | translate}}</button>
+                </div>
+              </form>
+
+              <div class="login-signup my-4 text-center" data-aos="fade-down" data-aos-duration="1000">
+                <span class="text">{{'login.I-am-not-a-member' | translate}}
+                  <a class="title color" routerLink="/register">
+                    {{'login.create-account' | translate}}
+                  </a>
+                </span>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

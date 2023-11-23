@@ -1,0 +1,28 @@
+<div class="card my-2 border-1 rounded-0 overflow-hidden">
+  <div class="card-img-top overflow-hidden">
+    <img [src]="img" loading="lazy" class="w-100 h-100" alt="image">
+    <button class="btn btn-warning btn-lg">إقرأ المزيد</button>
+  </div>
+  <div class="card-body text-center">
+    <img [src]="logo" loading="lazy" routerLink="/instructor" class="rounded-circle" alt="logo" width="50" height="50">
+    <div class="d-flex justify-content-between align-items-center overflow-hidden">
+      <div class="titles w-100">
+        <a routerLink="/instructor">
+          <h3 class="card-title title my-2">{{name}}</h3>
+        </a>
+        <h1 class="card-title title my-1">{{title}}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <div class="foot-card d-flex justify-content-around align-items-center">
+    <div class="sub d-flex justify-content-between align-items-center gap-2">
+      <i class='bx bxs-group fs-4 text-muted'></i>
+      <h4 class="fs-5 text-muted">{{sub}}</h4>
+    </div>
+    <div class="price d-flex gap-2">
+      <h4 *ngIf="price" class="fs-5 old-price">{{price}}$</h4>
+      <h4 *ngIf="newPrice" class="fs-5 new-price">{{newPrice}}$</h4>
+    </div>
+  </div>
+</div>

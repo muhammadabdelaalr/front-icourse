@@ -1,0 +1,69 @@
+<section>
+  <banner [title]="'banner.course-videos' | translate"></banner>
+  <div class="container">
+    <div class="content-page">
+      <div class="row gap-5">
+        <div class="col-xl-8 col-lg-8 col-md-12 shadow" data-aos="fade-down" data-aos-duration="1000">
+          <div class="video">
+            <div class="header-video p-3">
+              <h1 class="fs-2 fw-bold color">Name Video</h1>
+            </div>
+            <div class="body-video">
+              <video width="100%" height="100%" [src]="video" controls muted></video>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-12 shadow" data-aos="fade-down" data-aos-duration="1000">
+          <div class="tabs">
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+              <mat-tab label="{{'course-details.content' | translate}}">
+                <ng-template matTabContent>
+                  <div class="details-top bg-body-secondary p-2 w-100 d-flex justify-content-between">
+                    <h4 class="fw-bold">#</h4>
+                    <h4 class="fw-bold">Name</h4>
+                    <h4 class="fw-bold">duration</h4>
+                  </div>
+                  <div class="details" style="max-height: 455px;" data-aos="fade-down" data-aos-duration="1000">
+                    <div class="tab px-2 py-2" *ngFor="let item of videoDetails.content; index as i">
+                      <a class="w-100 d-flex justify-content-between">
+                        <h4>{{i+1}}</h4>
+                        <h4>{{item.name}}</h4>
+                        <h4>{{item.duration}}</h4>
+                      </a>
+                    </div>
+                  </div>
+                </ng-template>
+              </mat-tab>
+              <mat-tab label="{{'course-details.links' | translate}}">
+                <ng-template matTabContent>
+                  <div class="details" data-aos="fade-down" data-aos-duration="1000">
+                    <div class="tab px-2 py-2" *ngFor="let item of videoDetails.links; index as i">
+                      <a class="w-100 d-flex justify-content-between" [href]="item.url" target="_blank">
+                        <h4>{{i+1}}</h4>
+                        <h4>{{item.name}}</h4>
+                        <h4><i class='bx bx-link-external fs-5'></i></h4>
+                      </a>
+                    </div>
+                  </div>
+                </ng-template>
+              </mat-tab>
+              <mat-tab label="{{'course-details.files' | translate}}">
+                <ng-template matTabContent>
+                  <div class="details" data-aos="fade-down" data-aos-duration="1000">
+                    <div class="tab px-2 py-2" *ngFor="let item of videoDetails.files; index as i">
+                      <a class="w-100 d-flex justify-content-between" [href]="item.url" target="_blank">
+                        <h4>{{i+1}}</h4>
+                        <h4>{{item.name}}</h4>
+                        <h4><i class='bx bxs-file-export fs-5' ></i></h4>
+                      </a>
+                    </div>
+                  </div>
+                </ng-template>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

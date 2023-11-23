@@ -1,0 +1,32 @@
+<section>
+  <div class="sec1">
+    <div class="content d-flex justify-content-center align-items-center flex-column text-white" data-aos="fade-down" data-aos-duration="1000">
+      <h1 class="fs-1 fw-bold mb-4">{{'home.welcome' | translate}}</h1>
+      <p class="text-center">
+        {{'home.p1' | translate}}
+        <br />
+        {{'home.p2' | translate}}
+      </p>
+      <div class="courses-searching">
+        <form>
+          <input type="text" [placeholder]="'home.search' | translate">
+          <button>
+            <i class='bx bx-search' ></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="sec2">
+    <div class="container">
+      <h1 class="color mb-2 fw-bold" data-aos="fade-down" data-aos-duration="1000">دورت الرسم الهندسي</h1>
+      <div class="cards" data-aos="fade-down" data-aos-duration="1000">
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12"  routerLink="/course-details" *ngFor="let item of courses" data-aos="fade-down" data-aos-duration="1000">
+            <card [img]="item.img" [logo]="item.logo" [name]="item.name" [title]="item.title" [price]="item.price" [newPrice]="item.newPrice" [sub]="item.sub"></card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

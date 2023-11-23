@@ -1,0 +1,136 @@
+<section>
+  <banner [title]="'banner.profile' | translate"></banner>
+  <div class="container">
+    <nav class="nav-breadcrumb py-3 fs-6 fw-medium border-bottom border-light-subtle" aria-label="breadcrumb">
+      <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item"><a routerLink="/">{{'breadcrumb.home' | translate}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{'breadcrumb.profile' | translate}}</li>
+      </ol>
+    </nav>
+    <div class="content-page">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card" data-aos="fade-down" data-aos-duration="1000">
+            <div class="profile-image text-center mt-3 p-3">
+              <div class="img w-100">
+                <img src="../../../assets/images/profile.jpg" alt="profile" loading="lazy" class="rounded" width="150" height="150">
+              </div>
+              <div class="title py-2">
+                <h2 class="fw-medium">Mohamed Abdelaal</h2>
+              </div>
+            </div>
+            <div class="tabs" data-aos="fade-down" data-aos-duration="1000">
+              <div class="tab">
+                <a class="tab d-flex align-items-center gap-2 py-2 px-3" routerLink="/my-courses">
+                  <i class='bx bx-menu fs-5'></i>
+                  <h4>{{'profile.my-courses' | translate}}</h4>
+                </a>
+              </div>
+              <div class="tab">
+                <a class="tab d-flex align-items-center gap-2 py-2 px-3" routerLink="/">
+                  <i class='bx bx-question-mark fs-5'
+                  [ngClass]="lang ? 'bx-flip-horizontal' : ''"></i>
+                  <h4>{{'profile.quizzes' | translate}}</h4>
+                </a>
+              </div>
+              <div class="tab">
+                <a class="tab d-flex align-items-center gap-2 py-2 px-3" routerLink="/">
+                  <i class='bx bx-shopping-bag fs-5' ></i>
+                  <h4>{{'profile.orders' | translate}}</h4>
+                </a>
+              </div>
+              <div class="tab">
+                <a class="tab d-flex align-items-center gap-2 py-2 px-3" routerLink="/change-password">
+                  <i class='bx bxs-lock-open fs-5'></i>
+                  <h4>{{'profile.change-pass' | translate}}</h4>
+                </a>
+              </div>
+              <div class="tab">
+                <a class="tab d-flex align-items-center gap-2 py-2 px-3" routerLink="/login">
+                  <i class='bx bx-log-out-circle fs-5'
+                  [ngClass]="lang ? ' bx-rotate-180' : ''" ></i>
+                  <h4>{{'profile.logout' | translate}}</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-12">
+          <form class="boxs" [formGroup]="profileForm">
+            <div class="container">
+              <div class="row">
+                <div class="col-12" data-aos="fade-down" data-aos-duration="1000">
+                  <div class="text-center py-3 ">
+                    <h1 class="fs-2 fw-bold color">{{'profile.information' | translate}}</h1>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{'checkout.form.fullName' | translate}}</mat-label>
+                    <input type="text" matInput [(ngModel)]="profile.fullName" formControlName="fullName" placeholder="Ex. John Doe" />
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="profileForm.controls.fullName.errors?.['required']">
+                      {{'checkout.form.fullName-is' | translate}} <strong>{{'checkout.form.required' | translate}}</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-lg-6 col-md-12" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{'checkout.form.email' | translate}}</mat-label>
+                    <input type="text" matInput [(ngModel)]="profile.email" formControlName="email" placeholder="Ex. John Doe" />
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="profileForm.controls.fullName.errors?.['required']">
+                      {{'checkout.form.email' | translate}} <strong>{{'checkout.form.required' | translate}}</strong>
+                    </mat-error>
+                    <mat-error *ngIf="profileForm.controls.fullName.errors?.['email']">
+                      {{'checkout.form.emailAddress' | translate}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-lg-6 col-md-12" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{'checkout.form.phone' | translate}}</mat-label>
+                    <span matPrefix>+20 &nbsp;</span>
+                    <input type="text" matInput [(ngModel)]="profile.phone" formControlName="phone" placeholder="Ex. John Doe" />
+                    <mat-icon matSuffix>mode_edit</mat-icon>
+                    <mat-error *ngIf="profileForm.controls.phone.errors?.['required']">
+                      {{'checkout.form.phone' | translate}} <strong>{{'checkout.form.required' | translate}}</strong>
+                    </mat-error>
+                    <mat-error *ngIf="profileForm.controls.phone.errors?.['pattern']">
+                      {{'checkout.form.phone-pattern' | translate}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-lg-6 col-md-12" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{'checkout.form.city' | translate}}</mat-label>
+                    <input type="text" matInput [(ngModel)]="profile.city" formControlName="city" placeholder="Ex. Cairo" />
+                    <mat-icon matSuffix>edit_location</mat-icon>
+                    <mat-error *ngIf="profileForm.controls.city.errors?.['required']">
+                      {{'checkout.form.city' | translate}} <strong>{{'checkout.form.required' | translate}}</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-12" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{'checkout.form.addressLabel' | translate}}</mat-label>
+                    <textarea type="text" matInput [(ngModel)]="profile.address" formControlName="address" placeholder="Ex. Cairo, Egypt" ></textarea>
+                    <mat-icon matSuffix>map</mat-icon>
+                    <mat-error *ngIf="profileForm.controls.address.errors?.['required']">
+                      {{'checkout.form.address' | translate}} <strong>{{'checkout.form.required' | translate}}</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-12" data-aos="fade-down" data-aos-duration="1000">
+                  <div class="btns text-center">
+                    <button class="btn btn-warning" [disabled]="profileForm.invalid" (click)="updateProfile()">{{'profile.update' | translate}}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

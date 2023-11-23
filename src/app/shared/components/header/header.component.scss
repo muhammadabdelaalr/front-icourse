@@ -1,0 +1,40 @@
+nav {
+  font-size: 18px;
+  box-shadow: var(--main-shadow);
+
+  .navbar-brand {
+    font-size: 26px;
+    font-weight: 700;
+
+    .logo {
+      color: var(--main-color);
+    }
+  }
+
+  .nav-link {
+    color: #fff;
+    padding: 13px 20px;
+    font-weight: 400;
+    transition: var(--main-transition);
+    cursor: pointer;
+
+    &:hover, &.active {
+      color: var(--main-color);
+    }
+  }
+
+  .icons {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.social a {
+  background: #000;
+  color: #fff;
+  padding: 4px;
+  border-radius: 50%;
+  font-size: 12px;
+  display: inline-block;
+  line-height: 0;
+}

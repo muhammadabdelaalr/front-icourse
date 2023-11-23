@@ -1,0 +1,149 @@
+<section>
+  <banner [title]="'banner.blog' | translate"></banner>
+  <div class="container">
+    <nav class="nav-breadcrumb py-3 fs-6 fw-medium border-bottom border-light-subtle" aria-label="breadcrumb">
+      <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item"><a routerLink="/">{{'breadcrumb.home' | translate}}</a></li>
+        <li class="breadcrumb-item"><a routerLink="/blog">{{'breadcrumb.blog' | translate}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{'breadcrumb.blog-details' | translate}}</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="content-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-12" data-aos="fade-down" data-aos-duration="1000">
+          <article class="my-4">
+            <div class="post-image mb-4" routerLink="/blog-details">
+              <img src="../../../assets/images/blog.webp" loading="lazy" alt="blog" class="w-100 h-100">
+            </div>
+            <div class="post-content">
+              <div class="post-header">
+                <div class="content-details px-3">
+                  <a routerLink="/blog-details" class="title fs-2 fw-bold">ماذا تعرف عن AutoCAD؟</a>
+                  <div class="d-flex gap-5 mt-3">
+                    <div>
+                      <h3 class="text-muted fw-medium">Posted by</h3>
+                      <a routerLink="/instructor" class="title fw-medium">ALKHABIR</a>
+                    </div>
+                    <div>
+                      <h3 class="text-muted fw-medium">Date</h3>
+                      <a class="fw-medium">سبتمبر 19, 2023</a>
+                    </div>
+                    <div>
+                      <h3 class="text-muted fw-medium">Comments</h3>
+                      <a class="fw-medium">0 COMMENT</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-summary py-3">
+                <p>{{paragraph}}</p>
+              </div>
+            </div>
+          </article>
+
+          <div class="card border-1 mt-4 w-100" data-aos="fade-down" data-aos-duration="1000">
+            <div class="card-desc d-flex gap-2 p-3">
+              <img src="../../../assets/images/cardLogo.jpeg" alt="image" class="rounded-circle" loading="lazy"
+                width="100" height="100">
+              <a>
+                <h3 class="color">Alkhabir </h3>
+              </a>
+            </div>
+          </div>
+
+          <div class="card border-1 mt-4 w-100" data-aos="fade-down" data-aos-duration="1000">
+            <div class="row">
+              <div class="col-lg-8 col-md-12">
+                <div class="card-title p-4">
+                  <div class="container">
+                    <h4>المنشور السابق</h4>
+                    <div class="title py-3">
+                      <a class="title" routerLink="/blog-details">
+                        <h1 class="fw-bold">هل سيساعدك برنامج الاتوكاد بعد التخرج ؟</h1>
+                      </a>
+                      <h5 class="text-muted fw-bold">سبتمبر 19, 2023</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="card-desc d-flex gap-2 p-3">
+              <img src="../../../assets/images/cardLogo.jpeg" alt="image" class="rounded-circle" loading="lazy"
+                width="100" height="100">
+              <a>
+                <h3 class="color">Alkhabir </h3>
+              </a>
+            </div> -->
+          </div>
+
+          <div class="also-like my-4">
+            <h1 class="fw-bold color" data-aos="fade-down" data-aos-duration="1000">{{'blog-details.also-like' | translate}}</h1>
+            <div class="cards py-4">
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of courses" data-aos="fade-down"
+                data-aos-duration="1000" routerLink="/course-details">
+                <card [img]="item.img" [logo]="item.logo" [name]="item.name" [title]="item.title" [price]="item.price"
+                  [newPrice]="item.newPrice" [sub]="item.sub"></card>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reply-form my-4">
+            <div class="text" data-aos="fade-down" data-aos-duration="1000">
+              <h1 class="fw-bold color">{{'blog-details.reply' | translate}}</h1>
+              <h4 class="text-muted py-2">{{'blog-details.reply-text' | translate}}</h4>
+            </div>
+            <form class="my-2" data-aos="fade-down" data-aos-duration="1000">
+              <mat-form-field class="w-100 textarea">
+                <mat-label>Leave a comment</mat-label>
+                <textarea matInput rows="4" placeholder="Ex. It makes me feel..."></textarea>
+              </mat-form-field>
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{'register.fullName' | translate}}</mat-label>
+                    <input type="text" matInput formControlName="fullName" placeholder="Ex. mohamed">
+                    <!-- <mat-error *ngIf="registerForm.controls.fullName.errors?.['required']">
+                      {{'register.fullName-is' | translate}} <strong>{{'register.required' | translate}}</strong>
+                    </mat-error>
+                    <mat-error *ngIf="registerForm.controls.fullName.errors?.['fullName']">
+                      {{'register.fullNameAddress' | translate}}
+                    </mat-error> -->
+                  </mat-form-field>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{'login.email' | translate}}</mat-label>
+                    <input type="email" matInput formControlName="email" placeholder="Ex. example@mail.com">
+                    <!-- <mat-error *ngIf="loginForm.controls.email.errors?.['required']">
+                      {{'login.email-is' | translate}} <strong>{{'login.required' | translate}}</strong>
+                    </mat-error>
+                    <mat-error *ngIf="loginForm.controls.email.errors?.['email']">
+                      {{'login.emailAddress' | translate}}
+                    </mat-error> -->
+                  </mat-form-field>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{'login.url' | translate}}</mat-label>
+                    <input type="url" matInput formControlName="url" placeholder="Ex. https://example.com">
+                    <!-- <mat-error *ngIf="loginForm.controls.email.errors?.['required']">
+                      {{'login.email-is' | translate}} <strong>{{'login.required' | translate}}</strong>
+                    </mat-error> -->
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="btns text-start">
+                <button class="btn btn-warning">Post comment</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

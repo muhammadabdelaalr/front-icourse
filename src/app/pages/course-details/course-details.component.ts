@@ -39,7 +39,7 @@ export class CourseDetailsComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.dataService.getData().subscribe((data: any) => {
-      // Get the first course from the API response
+  
       interface Course {
         id: string;
         // other properties...

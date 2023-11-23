@@ -1,83 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable()
+export class DataService {
+  constructor(private http: HttpClient) { }
+
+  getData() {
+    return this.http.get('http://localhost:3000/api.php/courses');
+  }
+}
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [DataService]
 })
 export class HomeComponent {
-  courses = [
-    {
-      img: "../../../../assets/images/card.jpg",
-      logo: "../../../../assets/images/cardLogo.jpeg",
-      name: "Alkhabir",
-      title: "دورة الريفيت الانشائي",
-      price: 200,
-      newPrice: 100,
-      sub: 2500
-    },
-    {
-      img: "../../../../assets/images/card1.jpg",
-      logo: "../../../../assets/images/cardLogo.jpeg",
-      name: "Alkhabir",
-      title: "دورة الريفيت الانشائي",
-      price: 200,
-      newPrice: 100,
-      sub: 2500
-    },
-    {
-      img: "../../../../assets/images/card.jpg",
-      logo: "../../../../assets/images/cardLogo.jpeg",
-      name: "Alkhabir",
-      title: "دورة الريفيت الانشائي",
-      price: 200,
-      newPrice: 100,
-      sub: 2500
-    },
-    {
-      img: "../../../../assets/images/card1.jpg",
-      logo: "../../../../assets/images/cardLogo.jpeg",
-      name: "Alkhabir",
-      title: "دورة الريفيت الانشائي",
-      price: 200,
-      newPrice: 100,
-      sub: 2500
-    },
-    {
-      img: "../../../../assets/images/card.jpg",
-      logo: "../../../../assets/images/cardLogo.jpeg",
-      name: "Alkhabir",
-      title: "دورة الريفيت الانشائي",
-      price: 200,
-      newPrice: 100,
-      sub: 2500
-    },
-    {
-      img: "../../../../assets/images/card1.jpg",
-      logo: "../../../../assets/images/cardLogo.jpeg",
-      name: "Alkhabir",
-      title: "دورة الريفيت الانشائي",
-      price: 200,
-      newPrice: 100,
-      sub: 2500
-    },
-    {
-      img: "../../../../assets/images/card.jpg",
-      logo: "../../../../assets/images/cardLogo.jpeg",
-      name: "Alkhabir",
-      title: "دورة الريفيت الانشائي",
-      price: 200,
-      newPrice: 100,
-      sub: 2500
-    },
-    {
-      img: "../../../../assets/images/card1.jpg",
-      logo: "../../../../assets/images/cardLogo.jpeg",
-      name: "Alkhabir",
-      title: "دورة الريفيت الانشائي",
-      price: 200,
-      newPrice: 100,
-      sub: 2500
-    },
-  ]
+  courses: any = [];
+  constructor(private dataService: DataService) { }
+
+  ngOnInit() {
+    this.dataService.getData().subscribe((data: any) => {
+      this.courses = data;
+      console.log(data);
+    });
+  }
 }

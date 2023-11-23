@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
-
+import { ActivatedRoute } from '@angular/router';
 @Injectable()
 export class DataService {
   constructor(private http: HttpClient) { }
@@ -17,6 +17,7 @@ export class DataService {
   styleUrls: ['./course-details.component.scss'],
   providers: [DataService]
 })
+
 export class CourseDetailsComponent implements OnInit {
   panelOpenState = true;
   courseVideo = [
@@ -33,26 +34,33 @@ export class CourseDetailsComponent implements OnInit {
   course: any; // This object will be populated with data from the API
   courses: any = [];
 
-  constructor(public auth:AuthService, private dataService: DataService) {}
+  constructor(public auth:AuthService, private dataService: DataService, private route: ActivatedRoute) {}
 
   ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
     this.dataService.getData().subscribe((data: any) => {
       // Get the first course from the API response
-      const firstCourse = data[0];
-      switch(firstCourse.lang ){
+      interface Course {
+        id: string;
+        // other properties...
+      }
+      //const course = data[0];
+    
+      const course = data.find((item: Course) => item.id === id);
+      switch(course.lang ){
         case '1':
-          firstCourse.lang = "انجليزي";
+          course.lang = "انجليزي";
         break;
         case '0':
-         firstCourse.lang = "عربي";
+         course.lang = "عربي";
           break;
         default:
-         firstCourse.lang = "عربي";
+         course.lang = "عربي";
           break;
       }
       //TODO: Write a switch case for level ...
       // Populate the 'course' object with the data from the first course
-      this.course = firstCourse;
+      this.course = course;
       // Push the course to the 'recommended' array
       this.recommended.push(this.course);
     });

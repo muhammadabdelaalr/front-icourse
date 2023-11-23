@@ -16,6 +16,11 @@ export class RegisterComponent {
   token!: string;
 
   registerForm = new FormGroup({
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(50),
+    ]),
     name: new FormControl('', [
       Validators.required,
       Validators.minLength(3),

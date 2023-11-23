@@ -31,7 +31,11 @@
   },
   "register": {
     "register": "Register New",
+    "username":"Username",
     "fullName": "Full Name",
+    "username-is":"Username is ",
+    "usernameMax":"Please provide your username with no more than 50 characters",
+    "usernameMin":"Please provide username",
     "fullName-is": "Full Name is ",
     "fullNameMin": "Please provide your full name",
     "fullNameMax": "Please provide your name with no more than 50 characters",

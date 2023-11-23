@@ -11,7 +11,19 @@
               </div>
 
               <form [formGroup]="registerForm">
-
+                <mat-form-field appearance="fill" data-aos="fade-down" data-aos-duration="1000">
+                  <mat-label>{{'register.username' | translate}}</mat-label>
+                  <input type="text" matInput formControlusername="username" placeholder="Ex. John Doe" />
+                  <mat-error *ngIf="registerForm.controls.username.errors?.['required']">
+                    {{'register.username-is' | translate}} <strong>{{'register.required' | translate}}</strong>
+                  </mat-error>
+                  <mat-error *ngIf="registerForm.controls.username.errors?.['minlength']">
+                    {{'register.usernameMin' | translate}}
+                  </mat-error>
+                  <mat-error *ngIf="registerForm.controls.username.errors?.['maxlength']">
+                    {{'register.usernameMax' | translate}}
+                  </mat-error>
+                </mat-form-field>
                 <mat-form-field appearance="fill" data-aos="fade-down" data-aos-duration="1000">
                   <mat-label>{{'register.fullName' | translate}}</mat-label>
                   <input type="text" matInput formControlName="name" placeholder="Ex. John Doe" />

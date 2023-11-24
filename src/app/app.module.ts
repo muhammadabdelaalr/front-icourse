@@ -44,6 +44,7 @@ import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
 import { ForgotPassComponent } from './pages/auth/forgot-pass/forgot-pass.component';
 import { UpdatePassComponent } from './pages/auth/update-pass/update-pass.component';
 import { VerificationComponent } from './pages/auth/verification/verification.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,7 @@ import { VerificationComponent } from './pages/auth/verification/verification.co
       },
     }),
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

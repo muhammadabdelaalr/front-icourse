@@ -1,20 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { AuthService } from './auth.service';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit, OnDestroy {
   hide = true;
   token!: string;
+
+  registerSub!: Subscription;
 
   registerForm = new FormGroup({
     username: new FormControl('', [
@@ -39,6 +42,7 @@ export class RegisterComponent {
       this.matchValue('password'),
     ]),
   });
+
   matchValue(matchTo: string): ValidatorFn {
     return (control: any) => {
       return control?.value === control.parent?.controls[matchTo].value
@@ -54,10 +58,25 @@ export class RegisterComponent {
     return this.registerForm.get('confirmPassword');
   }
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
+
+  ngOnInit(): void {
+
+  }
+
+  ngOnDestroy(): void {
+    this.registerSub.unsubscribe();
+  }
 
   register() {
+    this.registerSub = this.authService.register(this.registerForm.value).subscribe({
+      next: (res) => {
+        console.log(res);
+      }, error: (err) => {
+        console.log(err);
+      }
+    })
     console.log(this.registerForm.value);
-    this.registerForm.value;
   }
+
 }

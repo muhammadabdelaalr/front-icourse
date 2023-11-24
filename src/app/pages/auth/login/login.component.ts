@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,7 +26,7 @@ export class LoginComponent {
     this.authService.login(this.loginForm.value).subscribe(
       response => {
         console.log(response);
-     
+
         this.router.navigate(['/home']);
         // Handle your response here. This could be navigating to another page, showing a success message, etc.
       },

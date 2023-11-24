@@ -23,11 +23,11 @@
                     <h4 class="fw-bold">Name</h4>
                     <h4 class="fw-bold">duration</h4>
                   </div>
-                  <div class="details" style="max-height: 455px;" data-aos="fade-down" data-aos-duration="1000">
-                    <div class="tab px-2 py-2" *ngFor="let item of videoDetails.content; index as i">
-                      <a class="w-100 d-flex justify-content-between">
-                        <h4>{{i+1}}</h4>
-                        <h4>{{item.name}}</h4>
+                  <div class="details" style="max-height: 455px;" data-aos="fade-down" data-aos-duration="1000" >
+                    <div class="tab px-2 py-2" *ngFor="let item of videoDetails">
+                      <a class="w-100 d-flex justify-content-between" (click)="setId(item.id)">
+                        <h4>{{item.id}}</h4>
+                        <h4>{{item.videoName}}</h4>
                         <h4>{{item.duration}}</h4>
                       </a>
                     </div>
@@ -37,10 +37,10 @@
               <mat-tab label="{{'course-details.links' | translate}}">
                 <ng-template matTabContent>
                   <div class="details" data-aos="fade-down" data-aos-duration="1000">
-                    <div class="tab px-2 py-2" *ngFor="let item of videoDetails.links; index as i">
-                      <a class="w-100 d-flex justify-content-between" [href]="item.url" target="_blank">
-                        <h4>{{i+1}}</h4>
-                        <h4>{{item.name}}</h4>
+                    <div class="tab px-2 py-2" *ngFor="let item of videoDetails">
+                      <a class="w-100 d-flex justify-content-between" [href]="item.linkUrl" target="_blank">
+                        <h4>{{item.id}}</h4>
+                        <h4>{{item.linkName}}</h4>
                         <h4><i class='bx bx-link-external fs-5'></i></h4>
                       </a>
                     </div>
@@ -50,10 +50,10 @@
               <mat-tab label="{{'course-details.files' | translate}}">
                 <ng-template matTabContent>
                   <div class="details" data-aos="fade-down" data-aos-duration="1000">
-                    <div class="tab px-2 py-2" *ngFor="let item of videoDetails.files; index as i">
-                      <a class="w-100 d-flex justify-content-between" [href]="item.url" target="_blank">
-                        <h4>{{i+1}}</h4>
-                        <h4>{{item.name}}</h4>
+                    <div class="tab px-2 py-2" *ngFor="let item of videoDetails">
+                      <a class="w-100 d-flex justify-content-between" [href]="item.fileUrl" target="_blank">
+                        <h4>{{item.id}}</h4>
+                        <h4>{{item.fileName}}</h4>
                         <h4><i class='bx bxs-file-export fs-5' ></i></h4>
                       </a>
                     </div>

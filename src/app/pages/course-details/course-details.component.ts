@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { ActivatedRoute } from '@angular/router';
+
 @Injectable()
 export class DataService {
   constructor(private http: HttpClient) { }
 
-  getData() {
-    return this.http.get('http://localhost:3000/api.php/courses');
+  getData(id: String) {
+    return this.http.get(`http://localhost:3000/api.php/courses/${id}`);
   }
 }
 
@@ -38,32 +39,26 @@ export class CourseDetailsComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.dataService.getData().subscribe((data: any) => {
-  
-      interface Course {
-        id: string;
-        // other properties...
-      }
-      //const course = data[0];
+    if (id != null){
+      this.dataService.getData(id).subscribe((data: any) => {
+        this.course = data[0];
+        switch(this.course.lang ){
+          case '1':
+            this.course.lang = "انجليزي";
+            break;
+          case '0':
+            this.course.lang = "عربي";
+            break;
+          default:
+            this.course.lang = "عربي";
+            break;
+        }
+        //TODO: Write a switch case for level ...
     
-      const course = data.find((item: Course) => item.id === id);
-      switch(course.lang ){
-        case '1':
-          course.lang = "انجليزي";
-        break;
-        case '0':
-         course.lang = "عربي";
-          break;
-        default:
-         course.lang = "عربي";
-          break;
-      }
-      //TODO: Write a switch case for level ...
-      // Populate the 'course' object with the data from the first course
-      this.course = course;
-      // Push the course to the 'recommended' array
-      this.recommended.push(this.course);
-    });
+        // Push the course to the 'recommended' array
+        this.recommended.push(this.course);
+      });
+    }
   }
 
   addToCart() {

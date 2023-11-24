@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'my-courses', component: MyCoursesComponent },
   { path: 'course-category', component: CourseCategoryComponent },
   { path: 'course-details/:id', component: CourseDetailsComponent },
-  { path: 'course-videos', component: CourseVideosComponent },
+  { path: 'course-videos/:id', component: CourseVideosComponent },
   { path: 'instructor', component: InstructorComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blog-details', component: BlogDetailsComponent },

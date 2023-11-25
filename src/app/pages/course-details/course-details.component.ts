@@ -1,11 +1,21 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Injectable, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/shared/services/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import {
+  HttpClient
+} from '@angular/common/http';
+import {
+  Component,
+  Injectable,
+  OnInit
+} from '@angular/core';
+import {
+  AuthService
+} from 'src/app/shared/services/auth.service';
+import {
+  ActivatedRoute
+} from '@angular/router';
 
 @Injectable()
 export class DataService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getData(id: String) {
     return this.http.get(`http://localhost:3000/api.php/courses/${id}`);
@@ -14,7 +24,7 @@ export class DataService {
 
 export interface VideoDetail {
   videoName: string;
-  videoTitle:string;
+  videoTitle: string;
 }
 @Component({
   selector: 'app-course-details',
@@ -25,7 +35,7 @@ export interface VideoDetail {
 
 export class CourseDetailsComponent implements OnInit {
   panelOpenState = true;
-  
+
   recommended: any = [];
   course: any; // This object will be populated with data from the API
   courses: any = [];
@@ -33,22 +43,25 @@ export class CourseDetailsComponent implements OnInit {
   videoDetails: VideoDetail[] = [];
   curr_video_title: string = '';
   curr_video_name: string = '';
-  constructor(public auth:AuthService, private dataService: DataService, private route: ActivatedRoute) {}
+  constructor(public auth: AuthService, private dataService: DataService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    if (id != null){
+    if (id != null) {
       this.dataService.getData(id).subscribe((data: any) => {
         this.course = data[0];
-this.videoDetails = JSON.parse(data[0].lessons_list) as VideoDetail[];
-this.courseVideo = [];
-for (let i = 0; i < this.videoDetails.length; i++) {
-  let videoObj = {title: this.videoDetails[i].videoTitle, name: this.videoDetails[i].videoName};
-  this.courseVideo.push(videoObj);
-}
+        this.videoDetails = JSON.parse(data[0].lessons_list) as VideoDetail[];
+        this.courseVideo = [];
+        for (let i = 0; i < this.videoDetails.length; i++) {
+          let videoObj = {
+            title: this.videoDetails[i].videoTitle,
+            name: this.videoDetails[i].videoName
+          };
+          this.courseVideo.push(videoObj);
+        }
 
-        
-        switch(this.course.lang ){
+
+        switch (this.course.lang) {
           case '1':
             this.course.lang = "انجليزي";
             break;
@@ -60,7 +73,7 @@ for (let i = 0; i < this.videoDetails.length; i++) {
             break;
         }
         //TODO: Write a switch case for level ...
-    
+
         // Push the course to the 'recommended' array
         this.recommended.push(this.course);
       });

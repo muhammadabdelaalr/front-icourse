@@ -12,6 +12,10 @@ export class DataService {
   }
 }
 
+export interface VideoDetail {
+  videoName: string;
+  videoTitle:string;
+}
 @Component({
   selector: 'app-course-details',
   templateUrl: './course-details.component.html',
@@ -21,20 +25,14 @@ export class DataService {
 
 export class CourseDetailsComponent implements OnInit {
   panelOpenState = true;
-  courseVideo = [
-    {
-      name: ' الدرس1.1',
-      title: 'مقدمة الدورة',
-    },
-    {
-      name: ' الدرس1.2',
-      title: 'الدرس الأول',
-    },
-  ];
+  
   recommended: any = [];
   course: any; // This object will be populated with data from the API
   courses: any = [];
-
+  courseVideo: any = [];
+  videoDetails: VideoDetail[] = [];
+  curr_video_title: string = '';
+  curr_video_name: string = '';
   constructor(public auth:AuthService, private dataService: DataService, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -42,6 +40,14 @@ export class CourseDetailsComponent implements OnInit {
     if (id != null){
       this.dataService.getData(id).subscribe((data: any) => {
         this.course = data[0];
+this.videoDetails = JSON.parse(data[0].lessons_list) as VideoDetail[];
+this.courseVideo = [];
+for (let i = 0; i < this.videoDetails.length; i++) {
+  let videoObj = {title: this.videoDetails[i].videoTitle, name: this.videoDetails[i].videoName};
+  this.courseVideo.push(videoObj);
+}
+
+        
         switch(this.course.lang ){
           case '1':
             this.course.lang = "انجليزي";

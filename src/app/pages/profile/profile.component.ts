@@ -8,7 +8,7 @@ export interface LoginDetail {
   phone_number: string,
   city: string,
   address: string,
-  pp_src: string,
+ // pp_src: any,
 }
 
 @Component({

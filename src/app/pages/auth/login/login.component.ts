@@ -13,7 +13,7 @@ export interface LoginDetail {
   phone_number: string,
   city: string,
   address: string,
-  pp_src: string,
+ // pp_src: string,
 }
 
 @Component({
@@ -31,7 +31,7 @@ export class LoginComponent {
     phone_number: '',
     city: '',
     address: '',
-    pp_src: '',
+  // pp_src: '',
     status: 0,
     message: ''
   }; 
@@ -61,7 +61,7 @@ export class LoginComponent {
         localStorage.setItem('phone_number', this.loginDetail.phone_number);
         localStorage.setItem('city', this.loginDetail.city);
         localStorage.setItem('address', this.loginDetail.address);
-        localStorage.setItem('pp_src', this.loginDetail.pp_src);
+       // localStorage.setItem('pp_src', this.loginDetail.pp_src);
         this.router.navigate(['/home']);
       } else {
         console.log(response);

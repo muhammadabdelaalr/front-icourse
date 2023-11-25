@@ -1,0 +1,166 @@
+{
+  "header": {
+    "welcome": "Invest in yourself",
+    "home": "Home",
+    "courses": "Courses",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "shopp": "Shopping cart"
+  },
+  "home": {
+    "welcome": "Invest in yourself",
+    "p1": "If you are looking for great and distinctive training courses that help you improve your skills",
+    "p2": "Growing in your favorite field or hobby, you're in the right place!",
+    "search": "Your course is here"
+  },
+  "login": {
+    "login": "Login",
+    "email": "Enter Email",
+    "email-is": "Email is ",
+    "emailAddress": "Please provide a valid email address",
+    "required": "Required",
+    "password": "Enter Password",
+    "password-is": "Password is ",
+    "passMin": "Please provide a valid password with at least 6 characters",
+    "remember": "Remember me",
+    "forgot-your-password": "Forgot your password?",
+    "sign-in-now": "Sign in now",
+    "I-am-not-a-member": "I am not a member?",
+    "create-account": "Create account"
+  },
+  "register": {
+    "register": "Register New",
+    "username":"Username",
+    "fullName": "Full Name",
+    "username-is":"Username is ",
+    "usernameMax":"Please provide your username with no more than 50 characters",
+    "usernameMin":"Please provide username",
+    "fullName-is": "Full Name is ",
+    "fullNameMin": "Please provide your full name",
+    "fullNameMax": "Please provide your name with no more than 50 characters",
+    "required": "required",
+    "email": "Email",
+    "email-is": "Email is ",
+    "emailAddress": "Please provide a valid email address",
+    "phone": "Phone Number",
+    "phone-is": "Phone Number is ",
+    "phone-pattern": "Please provide a valid phone number",
+    "address": "Address is required",
+    "password-pattern": "Create a password that matches the following pattern : least 6 characters long (A-b- @)",
+    "password": "Password",
+    "password-is": "Password is ",
+    "confirm-password": "Confirm password",
+    "confirm-password-is": "Confirm password is",
+    "confirm-the": "Confirm the password is different from the password",
+    "register-now": "Register Now",
+    "i-a-member": "I`m a member",
+    "sign-in-now": "Sign in now"
+  },
+  "change-pass": {
+    "change-pass": "Change Password",
+    "old-password": "Old password",
+    "new-password": "New Password",
+    "new-password-confirm": "New Password Confirm",
+    "password-old-is": "Old password is ",
+    "password-new-is": "New password is ",
+    "password-cenfirm-is": "New password is ",
+    "required": "required",
+    "passwords-must": "Passwords must be at least six characters long, at least one letter (A-b-@)",
+    "confirm-password": "Confirm password is",
+    "confirm-password-is": "Confirm password is",
+    "confirm-the": "Confirm the password is different from the password",
+    "newPasswordConfirm": "newPasswordConfirm is required",
+    "activate-password": "Activate Password",
+    "forget-password": "Forget Password?",
+    "sign-in-now": "Sign in now"
+  },
+  "blog-details": {
+    "also-link": "You may also like",
+    "reply": "Leave a reply",
+    "reply-text": "your e-mail address will not be published. Required fields are marked *"
+  },
+  "contact": {
+    "address": "Address",
+    "email": "Email",
+    "call": "Contact us"
+  },
+  "checkout": {
+    "noAccount": "Don't have an account?",
+    "registerAccount": "Click here to register a new account |",
+    "newUser": "Registered customer?",
+    "loginAccount": "Click here to log in",
+    "form": {
+      "form-title": "Billing & Shipping Details",
+      "fullName": "Full Name",
+      "fullName-is": "Full Name is ",
+      "required": "required",
+      "fullNameMin": "Please provide your full name",
+      "fullNameMax": "Please provide your name with no more than 50 characters",
+      "email": "Email",
+      "emailAddress": "Please provide a valid email address",
+      "phone": "Phone Number",
+      "phone-pattern": "Please provide a valid phone number",
+      "addressLabel": "Street / District Address",
+      "city": "City",
+      "address": "Address is"
+    },
+    "table": {
+      "table-title": "Your order",
+      "product": "Product",
+      "price": "Price",
+      "subTotal": "subTotal",
+      "total": "Total"
+    },
+    "coupons": {
+      "coupon?": "Do you have a discount coupon?",
+      "click-coupon": "Click here to enter your coupon code",
+      "title-coupon": "If you have a coupon code, please apply it below.",
+      "coupon": "Coupon code",
+      "required": "required",
+      "apply": "Apply"
+    },
+    "confirmation": "Order Confirmation"
+  },
+  "course-details": {
+    "content": "Courses Content",
+    "links": "Links",
+    "files": "Files",
+    "print": "Print certificate"
+  },
+  "profile": {
+    "information": "Personal Information",
+    "my-courses": "My Courses",
+    "quizzes": "Quizzes",
+    "orders": "Orders",
+    "change-pass": "Change Password",
+    "logout": "Logout",
+    "update": "Update personal information"
+  },
+  "banner": {
+    "courses": "All Courses",
+    "my-courses": "My Courses",
+    "course-videos": "Course videos",
+    "blog": "Blog",
+    "login": "Login",
+    "register": "Register",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "checkout": "Checkout",
+    "profile": "Profile"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "courses": "All Courses",
+    "my-courses": "My Courses",
+    "blog": "Blog",
+    "blog-details": "Blog details",
+    "checkout": "Checkout",
+    "profile": "Profile"
+  },
+  "footer": {
+    "details": "Alkhabeer Consulting and Training Company – A company specialized in technical consulting, training systems, management and quality systems, we offer professional courses with international accreditations",
+    "followed": "Follow Us!",
+    "copyRight": "© 2023 All Rights Reserved"
+  }
+}

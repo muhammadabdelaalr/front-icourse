@@ -6,6 +6,15 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export interface LoginDetail {
   status: number;
   message: string;
+  token: string,
+  full_name: string
+  email: string
+  username: string,
+  phone_number: string,
+  city: string,
+  address: string,
+  id: number,
+  pp_src: string,
 }
 
 @Component({
@@ -15,7 +24,19 @@ export interface LoginDetail {
 })
 
 export class LoginComponent {
-  loginDetail: LoginDetail = {status: 0, message: ''}; 
+  loginDetail: LoginDetail = {
+    token: '',
+    full_name: '',
+    email: '',
+    username: '',
+    phone_number: '',
+    city: '',
+    address: '',
+    id: 0,
+    pp_src: '',
+    status: 0,
+    message: ''
+  }; 
   hide = true;
   remember = false;
   token!: string;
@@ -32,9 +53,18 @@ export class LoginComponent {
 
   login() {
     this.authService.login(this.loginForm.value).subscribe((response: any) => {
-      this.loginDetail = response as LoginDetail; // Corrected here
+      this.loginDetail = response as LoginDetail;
       if (this.loginDetail.status === 200){
         console.log(response);
+        localStorage.setItem('token', this.loginDetail.token);
+        localStorage.setItem('full_name', this.loginDetail.full_name);
+        localStorage.setItem('email', this.loginDetail.email);
+        localStorage.setItem('username', this.loginDetail.username);
+        localStorage.setItem('phone_number', this.loginDetail.phone_number);
+        localStorage.setItem('city', this.loginDetail.city);
+        localStorage.setItem('address', this.loginDetail.address);
+        localStorage.setItem('id', this.loginDetail.id.toString());
+        localStorage.setItem('pp_src', this.loginDetail.pp_src);
         this.router.navigate(['/home']);
       } else {
         console.log(response);

@@ -1,5 +1,15 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+export interface LoginDetail {
+  token: string,
+  full_name: string
+  email: string
+  username: string,
+  phone_number: string,
+  city: string,
+  address: string,
+  pp_src: string,
+}
 
 @Component({
   selector: 'app-profile',
@@ -16,11 +26,11 @@ export class ProfileComponent {
     // phone: '',
     // city: '',
     // address: '',
-    fullName: 'Mohamed Abdelaal',
-    email: 'mohamed@mail.com',
-    phone: '01095245526',
-    city: 'Cairo',
-    address: 'Cairo, Egypt',
+    fullName: localStorage.getItem('full_name'),
+    email: localStorage.getItem('email'),
+    phone: localStorage.getItem('phone_number'),
+    city: localStorage.getItem('city'),
+    address: localStorage.getItem('address'),
   };
 
   profileForm = new FormGroup({

@@ -13,10 +13,10 @@
           <div class="card" data-aos="fade-down" data-aos-duration="1000">
             <div class="profile-image text-center mt-3 p-3">
               <div class="img w-100">
-                <img src="../../../assets/images/profile.jpg" alt="profile" loading="lazy" class="rounded" width="150" height="150">
+                <img src="../../../assets/images/logo.jpg" alt="profile" loading="lazy" class="rounded" width="150" height="150">
               </div>
               <div class="title py-2">
-                <h2 class="fw-medium">Mohamed Abdelaal</h2>
+                <h2 class="fw-medium">{{profile.fullName}}</h2>
               </div>
             </div>
             <div class="tabs" data-aos="fade-down" data-aos-duration="1000">
@@ -90,7 +90,7 @@
                 <div class="col-lg-6 col-md-12" data-aos="fade-down" data-aos-duration="1000">
                   <mat-form-field appearance="fill" class="w-100">
                     <mat-label>{{'checkout.form.phone' | translate}}</mat-label>
-                    <span matPrefix>+20 &nbsp;</span>
+                    <span matPrefix>+&nbsp;</span>
                     <input type="text" matInput [(ngModel)]="profile.phone" formControlName="phone" placeholder="Ex. John Doe" />
                     <mat-icon matSuffix>mode_edit</mat-icon>
                     <mat-error *ngIf="profileForm.controls.phone.errors?.['required']">
